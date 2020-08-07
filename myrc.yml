@@ -3,16 +3,16 @@ kind: ReplicationController
 metadata:
   name: maha-rc
 spec:
-  replicas: 3
+  replicas: 2
   selector:
-    app: mynginx
+    app: mahajavaapp
   template:
     metadata:
       labels:
-        app: mynginx
+        app: mahajavaapp
     spec:
       containers:
-      - name: my-container
-        image: nginx
+      - name: maha-java-container
+        image: maha4iac/mymahaapp:1
         ports:
-        - containerPort: 80
+        - containerPort: 8080
